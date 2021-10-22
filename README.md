@@ -11,3 +11,4 @@
   - To launch containers for the practical application and MongoDB, run `docker-compose up` in your terminal
   - Access at http://localhost:3000 within a browser
 - To run Cypress tests, open a terminal and run `npx cypress open` (for interactive GUI) or `npx cypress run` (for headless test)
+# swimlane-practical
