@@ -1,10 +1,6 @@
-import MainPage from "../pageObjects/mainPage";
-import NewArticlePage from "../pageObjects/newArticlePage";
-import AccessPage from "../pageObjects/accessPage";
-
-const access = new AccessPage();
-const main = new MainPage();
-const article = new NewArticlePage();
+import main from "../pageObjects/mainPage";
+import article from "../pageObjects/newArticlePage";
+import access from "../pageObjects/accessPage";
 
 const randomUser = access.getRandomUser(1000000);
 

@@ -42,4 +42,4 @@ class NewArticlePage {
   }
 }
 
-export default NewArticlePage;
+export default new NewArticlePage();

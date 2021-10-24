@@ -23,4 +23,4 @@ class MainPage {
   }
 }
 
-export default MainPage;
+export default new MainPage();

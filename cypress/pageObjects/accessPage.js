@@ -65,4 +65,4 @@ class AccessPage {
   }
 }
 
-export default AccessPage;
+export default new AccessPage();
