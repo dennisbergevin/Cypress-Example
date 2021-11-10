@@ -1,4 +1,4 @@
-# qa-infrastructure-engineer-practical
+# Cypress Example
 
 ## Required Technologies
 - Install Docker Desktop: https://www.docker.com/products/docker-desktop
