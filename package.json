@@ -1,18 +1,20 @@
 {
-  "name": "swimlane-qa-infrastructure-practical",
+  "name": "cypress-example",
   "version": "1.0.0",
-  "description": "Swimlane QA Infrastructure Practical",
+  "description": "Cypress Example",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress run",
+    "open": "npx cypress open",
     "start": "node ./server"
   },
   "keywords": [],
   "author": "Dennis Bergevin",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^7.7.0",
-    "prettier": "2.2.1"
+    "@testing-library/cypress": "^8.0.2",
+    "cypress": "^9.5.1",
+    "prettier": "2.5.1"
   }
 }

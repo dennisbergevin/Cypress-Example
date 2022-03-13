@@ -1,48 +1,43 @@
-import main from "../pageObjects/mainPage";
-import article from "../pageObjects/newArticlePage";
-import access from "../pageObjects/accessPage";
+import main from "../helpers/pageObjects/mainPage";
+import article from "../helpers/pageObjects/newArticlePage";
+import access from "../helpers/pageObjects/accessPage";
 
 const randomUser = access.getRandomUser(1000000);
+const value = "test";
 
-describe("Swimlane QA Infrastructure Practical", () => {
-  it("Create a new user and verify user name displays in profile", () => {
-    cy.visit("http://localhost:3000/signup");
-
-    // Fill in required fields
-    access.fillSignUpFields(`${randomUser}`);
-    access.clickSignUpButton();
-
-    // Assert User Lands On Main Page
-    cy.url().should("eq", "http://localhost:3000/");
-
-    // Assert Profile Shows User's Name
-    main.clickProfile();
-    cy.get(".page-header").should("contain", `${randomUser}`);
-
-    // Ensure Logout Lands User On Login Page
-    main.clickLogOut();
-    cy.url().should("eq", "http://localhost:3000/login");
+describe("Sign up a new user", () => {
+  before(() => {
+    access.navigateToSignUp();
+    access.signUp(randomUser);
   });
 
-  it("Login and create/verify new record", () => {
-    cy.visit("http://localhost:3000/login");
+  it("Should sign up new user and verify user name displays in profile", () => {
+    // Assert Profile Shows User's Name
+    main.profileTab
+      .should("be.visible")
+      .click()
+      .then(() => {
+        main.pageHeader.should("contain", `${randomUser}`);
+      });
 
-    // Fill in required fields
-    access.fillLoginFields(`${randomUser}`);
-    access.clickLoginButton();
+    // Ensure Logout Lands User On Login Page
+    main.logOutTab.click();
+    cy.url().should("eq", "http://localhost:3000/login");
+  });
+});
 
-    // Assert User Lands On Main Page
-    cy.url().should("eq", "http://localhost:3000/");
+describe("Login and create/verify new record", () => {
+  before(() => {
+    access.navigateToLogin();
+    access.login(randomUser);
+  });
 
+  it("Should login and create/verify new record", () => {
     // Create New Record
-    main.clickNewArticle();
-    article.fillRecordFields("test");
-    article.clickSaveButton();
+    main.newArticleBtn.should("be.visible").click();
+    article.createRecord(value);
 
     // Assert Success Message Appears
-    cy.get(article.getSuccessMessage).should(
-      "contain",
-      "Successfully created article!"
-    );
+    article.successMessage.should("contain", "Successfully created article!");
   });
 });
