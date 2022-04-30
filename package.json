@@ -8,7 +8,10 @@
     "test": "npx cypress run",
     "open": "npx cypress open",
     "start": "node ./server",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "npm run format:prettier && npm run format:eslint",
+    "format:eslint": "eslint --fix \"cypress/**/*.js\"",
+    "format:prettier": "prettier --write \"cypress/**/*.js\""
   },
   "keywords": [],
   "author": "Dennis Bergevin",
