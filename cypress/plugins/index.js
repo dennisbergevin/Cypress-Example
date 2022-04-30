@@ -15,7 +15,7 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = () => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+module.exports = (on, config) => {
+  require('cypress-fail-fast/plugin')(on, config);
+  return config;
 };
