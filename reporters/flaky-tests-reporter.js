@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this, no-console, no-undef */
-
 const Mocha = require('mocha');
 const { EVENT_RUN_END, EVENT_TEST_PASS, EVENT_TEST_RETRY } = Mocha.Runner.constants;
 
