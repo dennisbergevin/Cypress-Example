@@ -19,10 +19,6 @@ describe('Sign up a new user', () => {
       .then(() => {
         main.pageHeader.should('contain', `${randomUser}`);
       });
-
-    // Ensure Logout Lands User On Login Page
-    main.logOutTab.click();
-    cy.url().should('eq', 'http://localhost:3000/login');
   });
 });
 

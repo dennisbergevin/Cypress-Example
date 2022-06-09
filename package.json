@@ -5,8 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run",
-    "open": "npx cypress open",
+    "test": "npx cypress run --browser electron --e2e",
+    "open": "npx cypress open --browser electron --e2e",
     "start": "node ./server",
     "prepare": "husky install",
     "format": "npm run format:prettier && npm run format:eslint",
@@ -18,7 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
-    "cypress": "^9.5.1",
+    "cypress": "^10.0.3",
     "cypress-fail-fast": "^3.4.1",
     "eslint": "^8.14.0",
     "eslint-plugin-cypress": "^2.12.1",
