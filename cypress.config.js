@@ -5,7 +5,6 @@ module.exports = defineConfig({
   videoUploadOnPasses: false,
   viewportWidth: 1920,
   viewportHeight: 1080,
-  reporter: 'reporters/flaky-tests-reporter.js',
   retries: {
     runMode: 1,
     openMode: 0,
